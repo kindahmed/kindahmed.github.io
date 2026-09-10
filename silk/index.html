@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>silk labo快播-高质感影像作品速览与播放指南</title>
+  <meta name="description" content="silk labo快播专题页，汇集质感影像作品分类介绍、播放指引、常见问题与安全须知，专注高品位观影体验。">
+  <meta name="keywords" content="silk labo,快播,影像作品,播放指南,高画质,观影指南,作品分类,安全提示">
+  <style>
+    /* 全局重置与设计基调 — 深色优雅 + 柔和高光 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f7f4f0;
+      color: #1e1e2a;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header 与品牌区 */
+    .site-header {
+      background: #17141c;
+      backdrop-filter: blur(10px);
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 215, 190, 0.12);
+      position: sticky;
+      top: 0;
+      z-index: 60;
+    }
+
+    .header-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      background: linear-gradient(145deg, #b48b6a, #8e6e52);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #fbf5ef;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    .brand-name {
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #ede6df;
+    }
+
+    .brand-name span {
+      font-weight: 300;
+      color: #cba98b;
+    }
+
+    .quick-nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .quick-nav a {
+      color: #c9c2bc;
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 6px 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .quick-nav a:hover {
+      color: #f2e2d4;
+      border-bottom-color: #b48b6a;
+    }
+
+    .search-chip {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 40px;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 215, 190, 0.2);
+    }
+
+    .search-chip input {
+      background: transparent;
+      border: none;
+      color: #f2e8df;
+      font-size: 0.9rem;
+      outline: none;
+      width: 120px;
+    }
+
+    .search-chip input::placeholder {
+      color: #a39a94;
+    }
+
+    /* 主视觉 HERO */
+    .hero {
+      background: radial-gradient(ellipse at top left, #2c2530, #17141c 80%);
+      color: #f3ede8;
+      padding: 64px 0 56px;
+      border-radius: 0 0 32px 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 3.4rem);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .light-word {
+      font-weight: 300;
+      color: #d8b69b;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #cfc6bf;
+      max-width: 620px;
+      margin-bottom: 28px;
+      border-left: 3px solid #b48b6a;
+      padding-left: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .btn-primary {
+      background: #b48b6a;
+      color: #1e1410;
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: #caa181;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid rgba(255, 220, 190, 0.4);
+      color: #e0d4ca;
+      padding: 11px 28px;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 220, 190, 0.08);
+    }
+
+    /* 分类卡片区 */
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 500;
+      margin: 40px 0 24px;
+      color: #1f1c28;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(180, 139, 106, 0.5), transparent);
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .cat-card {
+      background: white;
+      border-radius: 24px;
+      padding: 22px 18px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+      transition: box-shadow 0.2s, transform 0.2s;
+      border: 1px solid #eee7e0;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 28px rgba(0, 0, 0, 0.08);
+      border-color: #d9c4b4;
+    }
+
+    .cat-card .emoji {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .cat-card h3 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #2f2a33;
+    }
+
+    .cat-card p {
+      color: #5e5660;
+      font-size: 0.95rem;
+    }
+
+    /* 作品展示区域 — 横向卡片 */
+    .showcase {
+      background: #fffbf7;
+      padding: 30px 0 20px;
+      border-radius: 40px;
+      margin: 32px 0;
+      box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .work-scroll {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      padding: 18px 4px 22px;
+      scrollbar-width: thin;
+      scrollbar-color: #b48b6a #e9e1da;
+    }
+
+    .work-card {
+      flex: 0 0 260px;
+      background: white;
+      border-radius: 24px;
+      padding: 14px;
+      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.04);
+      border: 1px solid #f0e3d9;
+    }
+
+    .work-thumb {
+      background: #d9c4b4;
+      height: 150px;
+      border-radius: 16px;
+      background-image: linear-gradient(145deg, #3a2f3f, #1d1a26);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 235, 220, 0.8);
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+    }
+
+    .work-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .work-meta h4 {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #26212b;
+    }
+
+    .work-meta .tag {
+      font-size: 0.8rem;
+      color: #a26e4b;
+      background: #f3e4d8;
+      padding: 2px 10px;
+      border-radius: 30px;
+      align-self: flex-start;
+    }
+
+    .work-meta .meta-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: #7a7078;
+      margin-top: 8px;
+    }
+
+    /* 播放指南与FAQ区块 */
+    .guide-wrap {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 28px;
+      margin: 40px 0;
+    }
+
+    .guide-panel {
+      background: white;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+      border: 1px solid #eadfd6;
+    }
+
+    .guide-panel h2 {
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+      font-weight: 500;
+      color: #25201f;
+    }
+
+    .step-list {
+      list-style: none;
+    }
+
+    .step-list li {
+      display: flex;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px dashed #d8ccc2;
+    }
+
+    .step-num {
+      width: 34px;
+      height: 34px;
+      background: #b48b6a;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .faq-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #ece2d9;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: #3e3138;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .faq-question::before {
+      content: 'Q';
+      background: #e2d4c8;
+      color: #5f463a;
+      width: 24px;
+      height: 24px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+
+    .faq-answer {
+      color: #5e5660;
+      padding-left: 32px;
+      font-size: 0.95rem;
+    }
+
+    /* 安全提示 */
+    .safety-note {
+      background: #e8e2dc;
+      border-radius: 28px;
+      padding: 24px 28px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin: 24px 0 40px;
+    }
+
+    .safety-note .note-text {
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* footer */
+    .site-footer {
+      border-top: 1px solid #e2d7ce;
+      padding: 32px 0 28px;
+      margin-top: 40px;
+      color: #6f6660;
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .footer-links a {
+      color: #6f6660;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: #b48b6a;
+    }
+
+    .copyright {
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 900px) {
+      .guide-wrap {
+        grid-template-columns: 1fr;
+      }
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .wrapper {
+        padding: 0 16px;
+      }
+      .hero {
+        padding: 40px 0 36px;
+      }
+      .brand-name {
+        font-size: 1.3rem;
+      }
+      .quick-nav {
+        gap: 12px;
+      }
+      .search-chip input {
+        width: 90px;
+      }
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+  <!-- 指定广告脚本，按需求插入 -->
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapper header-inner">
+      <div class="brand">
+        <div class="brand-icon">✦</div>
+        <div class="brand-name">silk labo<span>快播</span></div>
+      </div>
+      <nav class="quick-nav" aria-label="快速导航">
+        <a href="#">光影质感</a>
+        <a href="#">播放指南</a>
+        <a href="#">作品系列</a>
+        <a href="#">常见问题</a>
+        <div class="search-chip">
+          <span aria-hidden="true">⌕</span>
+          <input type="search" placeholder="搜索作品" aria-label="搜索">
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 主视觉 -->
+    <section class="hero">
+      <div class="wrapper hero-content">
+        <h1>silk labo快播 <span class="light-word">· 丝质影像美学</span></h1>
+        <p>专注高品质影像作品导航，提供细腻画面、氛围故事与流畅播放指引。带您进入 silk labo 独特视觉世界。</p>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary">探索作品库</a>
+          <a href="#" class="btn-secondary">播放环境说明</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 分类卡片 -->
+    <div class="wrapper">
+      <h2 class="section-title">浏览影像分类</h2>
+      <div class="category-grid">
+        <article class="cat-card">
+          <div class="emoji">🌆</div>
+          <h3>氛围叙事</h3>
+          <p>细腻情感与光影交织，适合静心观看的系列作品。</p>
+        </article>
+        <article class="cat-card">
+          <div class="emoji">🎞️</div>
+          <h3>质感短片</h3>
+          <p>精炼的影像篇幅，突出摄影与色彩美学。</p>
+        </article>
+        <article class="cat-card">
+          <div class="emoji">✨</div>
+          <h3>视觉研究</h3>
+          <p>侧重构图、光线和场景设计的艺术向内容。</p>
+        </article>
+        <article class="cat-card">
+          <div class="emoji">📖</div>
+          <h3>导演珍藏</h3>
+          <p>特别收录具有作者风格的特色作品。</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- 近期精选/热门作品横向滚动 -->
+    <section class="showcase">
+      <div class="wrapper">
+        <h2 class="section-title">近期热门 · 快播精选</h2>
+        <div class="work-scroll">
+          <div class="work-card">
+            <div class="work-thumb">◈</div>
+            <div class="work-meta">
+              <h4>Silk Pulse</h4>
+              <span class="tag">氛围 · 4K</span>
+              <div class="meta-line"><span>时长 48min</span><span>播放 ★ 9.1</span></div>
+            </div>
+          </div>
+          <div class="work-card">
+            <div class="work-thumb">◇</div>
+            <div class="work-meta">
+              <h4>Labo Noir</h4>
+              <span class="tag">质感 · 黑白</span>
+              <div class="meta-line"><span>时长 32min</span><span>播放 ★ 8.7</span></div>
+            </div>
+          </div>
+          <div class="work-card">
+            <div class="work-thumb">❖</div>
+            <div class="work-meta">
+              <h4>Quiet Silk</h4>
+              <span class="tag">抒情 · 光影</span>
+              <div class="meta-line"><span>时长 55min</span><span>播放 ★ 9.4</span></div>
+            </div>
+          </div>
+          <div class="work-card">
+            <div class="work-thumb">◍</div>
+            <div class="work-meta">
+              <h4>Urban Labo</h4>
+              <span class="tag">都市 · 实验</span>
+              <div class="meta-line"><span>时长 41min</span><span>播放 ★ 8.9</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 播放指引 + FAQ -->
+    <div class="wrapper guide-wrap">
+      <div class="guide-panel">
+        <h2>快播 · 流畅观影指南</h2>
+        <ul class="step-list">
+          <li><span class="step-num">1</span><span>确认网络环境稳定，建议带宽不低于 10Mbps 以获得高码率体验。</span></li>
+          <li><span class="step-num">2</span><span>使用 Chrome、Edge 或 Safari 最新版本浏览器，并开启硬件加速。</span></li>
+          <li><span class="step-num">3</span><span>若出现缓冲，可切换清晰度至“高清”或“流畅”，兼顾画质与流畅。</span></li>
+          <li><span class="step-num">4</span><span>部分作品支持字幕/音轨切换，在播放器内点击“CC”或“音轨”图标。</span></li>
+        </ul>
+      </div>
+      <div class="guide-panel">
+        <h2>常见问题</h2>
+        <div class="faq-item">
+          <div class="faq-question">silk labo 作品画质如何？</div>
+          <div class="faq-answer">大多提供 1080p 及 4K 片源，具体视作品压制情况而定。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">快播是否需要安装插件？</div>
+          <div class="faq-answer">无需额外插件，H5 播放器直接运行。请确保浏览器为最新版。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">播放时卡顿怎么办？</div>
+          <div class="faq-answer">尝试切换线路或降低清晰度。同时关闭占用带宽的后台程序。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 安全提示与须知 -->
+    <div class="wrapper">
+      <div class="safety-note">
+        <div class="note-text">
+          <span style="font-size: 1.8rem;">⛨</span>
+          <span><strong>安全播放提示：</strong> 请从官方或信任来源访问内容，避免下载未知播放器。本站仅提供信息导航。</span>
+        </div>
+        <a href="#" class="btn-secondary" style="border-color:#b48b6a; color:#4f3d32;">了解更多</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <div class="footer-links">
+        <a href="#">关于silklabo</a>
+        <a href="#">版权声明</a>
+        <a href="#">观影指南</a>
+        <a href="#">联系合作</a>
+        <a href="#">隐私说明</a>
+      </div>
+      <div class="copyright">
+        <p>© 2025 Silk Labo 快播指南 · 仅供信息参考，请支持正版内容。</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
